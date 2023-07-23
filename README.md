@@ -48,11 +48,27 @@ TCL helps save and restore any changes after performing DCL.
 
 SQL provides a term called Relational Database Management System (RBDMS) which means there could be multiple tables in a database that can be related to others or have common columns in multiple tables.
 
-There have some columns which are identified differently from other columns to do that there have some special keywords
+There are some columns that are identified differently from other columns to do there have some special keywords
   1. `Primary` Key
   2. `Unique` Key
   3. `Foreign` Key
 
+
+## Primary key
+
+When we use `PRIMARY KEY` keyword during building a table, beside a column name that means all of the values inside of a column would be unique.
+
+  * Every table must have only one primary column, more than one primary key is not allowed.
+  * Cannot contain `NULL` values
+
+``` MySQL
+      CREATE TABLE Customers (
+            customer_id INT,
+            customer_name varchar(100),
+            email varchar(100),
+            PRIMARY KEY (customer_id)
+          );
+```
 
 
 
