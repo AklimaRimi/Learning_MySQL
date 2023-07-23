@@ -117,6 +117,38 @@ CREATE TABLE Customers (
 
 ```
 
+## Relationship
+
+A customer can buy multiple products, A customer can have only one unique order_id, customers can purchase various products, and products can be purchased by many customers. So these are the relationships between customer and product. <br>
+  * It represents how multiple tables need to be implemented.
+  * Depicts how a database is organized
+  * It is a blueprint.
+    
+There are commonly 3 types of relationships that can be created among tables.
+  1. One to One
+  2. One to Many
+  3. Many to Many
+
+
+# Variables
+
+|Data type     | Keyword | Maximum Byte size | useful for|
+|---------     |---------|-----------|-----------|
+| Character    | `CHAR`  | 255       |  CHAR stores a fixed number of characters, padding any extra space with blank characters. If we set CHAR(10) and a value store 'Hello' CHAR not only store 'Hello' but also 5 extra spaces 'Hello_____' |
+| Variable Character  |`VARCHAR`| 65, 535| VARCHAR stores only the actual characters used in the string, without padding any extra spaces. If we set VARCHAR(10) and a value store 'Hello' VARCHAR just store the value without extra spaces|
+|Enumerate| `ENUM('x','y','z')`| 255| Error will through if we input value instead of x,y,z|
+|Tiny Integer | `TINYINT`| 1 | Use according to data, range (-128, 127) digits|
+|Small Integer| `SMALLINT`| 2 range| Use according to data, range (-32768, 32787) digits|
+|Medium Interger| `MEDIUMINT`| 3 | Use according to data, range (-8388608, 8388607 ) digits|
+| Integer| `INT`| 4 | Use according to data, range (-2147483648, 2147483647) digits|
+|BIG Integer| `BIGINT`| 8 | Use according to data, (-9223372036854775808, 9223372036854775807) digits|
+| Float | `FLOAT(p,s)`| 4 | Maximum Digit 23|
+| Double | `DOUBLE(p,s)` | 8 | Maximum Digit 53|
+
+
+
+
+
 
 
 
