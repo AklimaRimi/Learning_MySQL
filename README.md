@@ -56,21 +56,46 @@ There are some columns that are identified differently from other columns to do 
 
 ## Primary key
 
-When we use `PRIMARY KEY` keyword during building a table, beside a column name that means all of the values inside of a column would be unique.
+When we use `PRIMARY KEY` keyword during building a table, beside a column name that means all of the values inside of a column will be unique.
 
-  * Every table must have only one primary column, more than one primary key is not allowed.
+  * Each table may or may not contain a primary key column, but only one primary column is acceptable, more than one primary key is not allowed.
   * Cannot contain `NULL` values
-
+    
+    ### Code
+    
 ``` MySQL
-      CREATE TABLE Customers (
+   
+    CREATE TABLE Products (
+          product_id INT,
+          product_name VARCHAR(100),
+          price DECIMAL(5,3),           
+          PRIMARY KEY (product_id)
+
+        );
+```
+
+## Foreign Key
+
+Foreign Key helps to connect one table with another. It represents common columns between 2 or multiple tables.
+
+  * Each table may have multiple or 0 foreign key columns.
+  * May have `NULL` values
+  *  identifies the relationships between tables, not the tables themselves.
+
+ ### Code
+
+ ``` MySQL
+
+  CREATE TABLE Customers (
             customer_id INT,
             customer_name varchar(100),
             email varchar(100),
-            PRIMARY KEY (customer_id)
+            product INT,
+            PRIMARY KEY (customer_id),
+            FOREIGN KEY (product) REFERENCES Products(product_id)
           );
-```
-
-
+  
+ ```
 
 
 
