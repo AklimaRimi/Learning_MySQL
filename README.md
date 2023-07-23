@@ -6,6 +6,7 @@ It has several terms, like
 * DDL - Data Definition Language
 * DML - Data Manipulation Language
 * DCL - Data Control Language
+* TCL - Transaction Control Language
 
 ## Data Definition Language
 ---
@@ -31,6 +32,60 @@ DCL uses to access or revoke permission for users.
   ### Keywords
   * `REVOKE`
   * `GRANT `
+
+## Transaction Control Language
+---
+TCL helps save and restore any changes after performing DCL.
+  ### Keywords
+  * `COMMIT`
+  * `ROLLBACK`
+
+
+# Relationship
+
+SQL provides a term called Relational Database Management System (RBDMS) which means there could be multiple tables in a database that can be related to others or have common columns in multiple tables.
+
+There have some columns which are identified differently from other columns to do that there have some special keywords
+  * `Primary` Key
+  * `Unique` Key
+  * `Foreign` Key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
