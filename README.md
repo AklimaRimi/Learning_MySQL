@@ -160,6 +160,23 @@ or
   ```MySQL
   CREATE DATABASE IF NOT EXISTS Sale;
   ```
+## Create Table
+  ```MySQL
+  CREATE TABLE Customers (
+          customer_id INT,
+          customer_name VARCHAR(100),
+          email VARCHAR(100) unique key,
+          phone VARCHAR(11) unique key,
+          product INT,
+          PRIMARY KEY (customer_id)
+        );
+  ```
+
+or
+
+  ```MySQL
+  CREATE DATABASE IF NOT EXISTS Sale;
+  ```
 ## ALTER Database
 
   ```MySQL
@@ -179,6 +196,54 @@ or
 
 
 
+# Working on Table using DML
+
+
+  ## Insert value
+  * Just insert value according to the column and data types
+  ```MySQL
+    INSERT into Customers (customer_id, customer_name, email, phone, product)  values (0, 'Rimi','Rimi@gmail.com', '12345', 'soap');
+    INSERT into Customers (customer_id, customer_name, email, phone, product)  values (1, 'A','A@gmail.com', '2345', 'soap');
+    INSERT into Customers (customer_id, customer_name, email, phone, product)  values (2, 'B','B@gmail.com', '3456', 'Laptop');
+    INSERT into Customers (customer_id, customer_name, email, phone, product)  values (3, 'C','c@gmail.com', '4567', 'Mouse');
+  ```
+  ## SELECT
+  * Retrieve or fetch data from Table
+  * Extract Information
+
+    ### Code
+    ```MySQL
+    SELECT COLUMN_NAMES FROM TABLE_NAME;
+
+
+    Like
+
+    SELECT * FROM Customer;
+    ```
+
+    ***This will show all of the column values from Customer Table***
+
+## WHERE (Condition)
+  
+`WHERE` clause set a condition, using this clause we can make our query more specifically what part of the data we are looking for.
+
+  ### Code
+
+  ```MySQL
+SELECT * FROM Customers WHERE customer_name = 'RIMI';
+```
+
+## AND (Operator)
+
+`AND` operation uses in condition, we all know if all the conditions made true, then it will provide output.
+
+x = 0 <br> 
+y = 0 <br>
+if x == 0 and y == 0 : output will be 0
+
+  ```MySQL
+  SELECT * FROM Customers WHERE customer_name = 'Rimi' AND product = 'soap';
+  ```
 
 
 
