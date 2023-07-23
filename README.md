@@ -41,14 +41,17 @@ TCL helps save and restore any changes after performing DCL.
   * `ROLLBACK`
 
 
+<br>
+<br>
+
 # Relationship
 
 SQL provides a term called Relational Database Management System (RBDMS) which means there could be multiple tables in a database that can be related to others or have common columns in multiple tables.
 
 There have some columns which are identified differently from other columns to do that there have some special keywords
-  * `Primary` Key
-  * `Unique` Key
-  * `Foreign` Key
+  1. `Primary` Key
+  2. `Unique` Key
+  3. `Foreign` Key
 
 
 
