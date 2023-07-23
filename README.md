@@ -144,6 +144,7 @@ There are commonly 3 types of relationships that can be created among tables.
 |BIG Integer| `BIGINT`| 8 | Use according to data, (-9223372036854775808, 9223372036854775807) digits|
 | Float | `FLOAT(p,s)`| 4 | Maximum Digit 23|
 | Double | `DOUBLE(p,s)` | 8 | Maximum Digit 53|
+| Date Time | `DATE` `DATETIME` `TIMESTAMP` |2, 4, 8| 
 
 
 
