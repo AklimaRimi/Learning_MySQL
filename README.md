@@ -88,8 +88,8 @@ Foreign Key helps to connect one table with another. It represents common column
 
   CREATE TABLE Customers (
             customer_id INT,
-            customer_name varchar(100),
-            email varchar(100),
+            customer_name VARCHAR(100),
+            email VARCHAR(100),
             product INT,
             PRIMARY KEY (customer_id),
             FOREIGN KEY (product) REFERENCES Products(product_id)
@@ -97,8 +97,25 @@ Foreign Key helps to connect one table with another. It represents common column
   
  ```
 
+## Unique Key
 
+As we know, the primary key contains Unique values in a column, but there are some entities that also need to be unique like email, address, and phone number. So, here `UNIQUE KEY` comes.
 
+  * We can use multiple times this key in a table.
+  * May contain `NULL` values
+    
+
+```MySQL
+CREATE TABLE Customers (
+          customer_id INT,
+          customer_name VARCHAR(100),
+          email VARCHAR(100) unique key,
+          phone VARCHAR(11) unique key,
+          product INT,
+          PRIMARY KEY (customer_id)
+        );
+
+```
 
 
 
