@@ -165,10 +165,14 @@ or
   ```MySQL
   ALTER DATABASE IF EXISTS Sale RENAME TO product_sale';
   ```
-## Drop Database
+## Drop Database/ Table
 
   ```MySQL
   DROP DATABASE product_sale;
+  ```
+
+  ```MySQL
+  DROP TABLE table_name;
   ```
 
 
