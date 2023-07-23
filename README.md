@@ -148,7 +148,28 @@ There are commonly 3 types of relationships that can be created among tables.
 
 
 
+# Working on Database using DDL 
 
+## Create Database
+  ```MySQL
+  CREATE DATABASE Sale;
+  ```
+
+or
+
+  ```MySQL
+  CREATE DATABASE IF NOT EXISTS Sale;
+  ```
+## ALTER Database
+
+  ```MySQL
+  ALTER DATABASE IF EXISTS Sale RENAME TO product_sale';
+  ```
+## Drop Database
+
+  ```MySQL
+  DROP DATABASE product_sale;
+  ```
 
 
 
