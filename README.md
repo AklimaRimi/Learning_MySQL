@@ -235,7 +235,7 @@ SELECT * FROM Customers WHERE customer_name = 'RIMI';
 
 ## AND (Operator)
 
-`AND` operation uses in condition, we all know if all the conditions made true, then it will provide output.
+`AND` operation uses conditions; we all know if all the conditions are true, then it will provide output.
 
 x = 0 <br> 
 y = 0 <br>
@@ -245,9 +245,29 @@ if x == 0 and y == 0 : output will be 0
   SELECT * FROM Customers WHERE customer_name = 'Rimi' AND product = 'soap';
   ```
 
+ ## OR (Operator)
+ If we have different conditions and satisfy at least one condition, the result will be shown.
 
+   ```MySQL
+    SELECT * FROM Customers WHERE product = 'laptop' or product = 'soap';
+   ```
+The output will be all of the results which have product names `laptop` and `soap`.
 
+## **What if we have to use `AND` and `OR` operators at the same condition? Which operator will perform first?**
 
+suppose we write this sql code..
+  ```MySQL
+    SELECT * FROM Customers WHERE customer_name = 'Rimi' AND product = 'laptop' or product = 'soap';
+   ```
+So SQL Precedence law says `AND` operation will perform first then `OR` will.
+
+So the above code executes `customer_name = 'Rimi' AND product = 'laptop'` then `OR` operator will be executed. 
+
+If we want to the code perform `OR` operator first then `AND` we can use parenthesis like that:
+ 
+  ```MySQL
+    SELECT * FROM Customers WHERE customer_name = 'Rimi' AND (product = 'laptop' or product = 'soap');
+   ```
 
 
 
