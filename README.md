@@ -285,10 +285,18 @@ Sometimes we need to look for some string but can not remember the whole string 
     SELECT * FROM Customers WHERE LIKE('Ri%);
   ```
 
-There are some rules for finding data using pattern.
+There are some rules for finding data using patterns.
 |Pattern|Meaning|Example|
 |-------|-------|--------|
-|AB%    |Returns all the values that start with AB and Lenght doesn't matter|AB, ABC,ABCDBCDFBVDVFBFB|
+|AB%    |Returns all the values that start with AB and Length doesn't matter|AB, ABC, ABCDBCDFBVDVFBFB|
+|%AB    | Returns all the values that end with AB and also length doesn't matter| lfihdoginosAB, AB, AAB, CAB|
+|%AB%   | Returns all the value that has middle value AB, length doesn't matter| lkjlkABpofjpo, AB, xABm|
+|AB_    | Returns all the values that start with AB and string size `3`| ABC, ABX, ABH|
+| _AB   | Returns all the values that end with AB and string size `3`| CAB, XAB, GAB|
+| _AB_  | Returns all the values that middle value AB and string size `4`| CABH, XABA, GABA|
+|_A%    | Return values which have 2nd letter A| xAlfdgijdoignodfi, BA, AA|
+| A%B   | Return values which have start value A and end value B| AB, ADGDGFDB|
+
 
 
 
