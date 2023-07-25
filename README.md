@@ -269,10 +269,26 @@ If we want to the code perform `OR` operator first then `AND` we can use parenth
     SELECT * FROM Customers WHERE customer_name = 'Rimi' AND (product = 'laptop' or product = 'soap');
    ```
 
+## NOT IN (Operator)
 
+We can not write all the time. Show me the list which has the name Rimi, a,b,c,d,e, and so on. This gonna be a huge condition. Instead of the whole condition, we can just say show me the  list which doesn't have name B using `NOT IN` operation in the condition. So the code will be
 
+  ```MySQL
+    SELECT * FROM Customers WHERE customer_name NOT IN ('B');
+  ```
 
+## Pattern
 
+Sometimes we need to look for some string but can not remember the whole string or string having common words or letters or patterns. In that case, we can retrieve the data using the pattern or word using `LIKE` operator.
+
+  ```MySQL
+    SELECT * FROM Customers WHERE LIKE('Ri%);
+  ```
+
+There are some rules for finding data using pattern.
+|Pattern|Meaning|Example|
+|-------|-------|--------|
+|AB%    |Returns all the values that start with AB and Lenght doesn't matter|AB, ABC,ABCDBCDFBVDVFBFB|
 
 
 
