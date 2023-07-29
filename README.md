@@ -346,12 +346,18 @@ Or
   ```
 
 ## GROUP BY 
-  As the name suggests make the Group some columns or information. To do that 
+  As the name suggests, give the Group some columns or information. To do that 
 
   ```MySQL
     SELECT * FROM Customers WHERE GROUP BY (Product) ORDER BY Name;
   ```
+## AS
+To rename any column name or any value name, we can use  `AS`. 
 
+  ```MySQL
+    SELECT Product As P FROM Customers ;
+    SELECT COUNT(Product) AS product_count FROM Customers; 
+  ```
 
 
 
