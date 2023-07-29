@@ -310,7 +310,12 @@ On the opposite, if we want to see the information except the code from 564 to 1
     SELECT * FROM Student WHERE Code NOT BETWEEN 564 AND 1000;
   ```
 
+## DISTINCT
+ To find Unique values, we can use DISTINCT keyword
 
+  ```MySQL
+    SELECT DISTINCT Product FROM Customers;     
+  ```
 
 
 
