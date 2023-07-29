@@ -298,12 +298,17 @@ There are some rules for finding data using patterns.
 | A%B   | Return values which have start value A and end value B| AB, ADGDGFDB|
 
 
+## BETWEEN.. AND..
 
+If we want to see information and there is a range, we can simply use Between keyword. Suppose, we want to see Student information whose code range from 564 to 1000. We can use
+  ```MySQL
+    SELECT * FROM Student WHERE Code BETWEEN 564 AND 1000;
+  ```
+On the opposite, if we want to see the information except the code from 564 to 1000 we can do 
 
-
-
-
-
+  ```MySQL
+    SELECT * FROM Student WHERE Code NOT BETWEEN 564 AND 1000;
+  ```
 
 
 
