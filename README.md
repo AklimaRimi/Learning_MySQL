@@ -336,13 +336,20 @@ On the opposite, if we want to see the information except the code from 564 to 1
     SELECT SUM(Product) FROM Customers;     
     ```
 ## ORDER BY
-  To make arranged data, we can use `ORDER BY` keyword. We can arrange data in ascending order or descending order.
+  To make arranged data, we can use `ORDER BY` keyword. We can arrange the data in ascending or descending.
   ```MySQL
-    SELECT * FROM Customers WHERE ORDER BY Product ASC; 
+    SELECT * FROM Customers ORDER BY Product,Name ASC; 
   ```
 Or
   ```MySQL
-    SELECT * FROM Customers WHERE ORDER BY Product DSC; 
+    SELECT * FROM Customers ORDER BY Product DSC; 
+  ```
+
+## GROUP BY 
+  As the name suggests make the Group some columns or information. To do that 
+
+  ```MySQL
+    SELECT * FROM Customers WHERE GROUP BY (Product) ORDER BY Name;
   ```
 
 
