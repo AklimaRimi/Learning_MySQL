@@ -317,9 +317,24 @@ On the opposite, if we want to see the information except the code from 564 to 1
     SELECT DISTINCT Product FROM Customers;     
   ```
 
+## Aggregate functions
+  Applied to multiple rows of a single column of a table and returns an output of a single value. Some functions are:-
+  * COUNT()
+  * SUM()
+  * MIN()
+  * MAX()
+  * AVG()
 
-
-
+    ### COUNT()
+      COUNT uses for counting unique values in a column or how frequently a value occurs.
+    ```MySQL
+    SELECT COUNT(Product) FROM Customers WHERE Product = 'Laptop';     
+    ```
+    ### SUM()
+      To find the numeric sum of a column. 
+    ```MySQL
+    SELECT SUM(Product) FROM Customers;     
+    ```
 
 
 
