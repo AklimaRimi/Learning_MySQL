@@ -429,12 +429,25 @@ Limit shows the limited rows of data
     WHERE Month = 'January, 2023'
     GROUP BY Name
     HAVING COUNT(Name) >= 100
-    ORDERED BY cnt_name
+    ORDER BY cnt_name
     LIMIT 10;
   ```
-The output will show 1st 10 rows which indicate the top 10 employee names who applied more than 100 times before January,2023.
+The output will show the first 10 rows, which indicate the top 10 employee names who applied more than 100 times before January 2023.
 
+# Joins
+Simply join multiple tables using a common column and make another new table by joining. 
 
+Point to be noted that two columns must have a common column or `FOREIGN KEY` Column.
+
+  ## INNER JOIN
+    - Only returns Common Columns or matching values between 2 tables.
+
+ ```MySQL
+  SELECT table_1.column1, table_1.column2, table_1.column3, table_2.column1, table_2.column2, table_2.column3
+
+ FROM table_1
+ JOIN table_2 ON table_1.column1 = table_2.column1;
+ ```
 
 
 
