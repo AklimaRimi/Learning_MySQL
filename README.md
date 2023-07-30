@@ -14,7 +14,7 @@ It has several terms, like
 ## Data Definition Language
 ---
 
-It's a part of MySQL, which is a set of statements that allow the `user` to `define` or `modify` table not data
+It's a part of MySQL, which is a set of statements that allow the `user` to `define` or `modify` tables, not data
   ### Keywords
   * `CREATE` table
   * `ALTER` or modify the table
@@ -338,6 +338,24 @@ On the opposite, if we want to see the information except the code from 564 to 1
     ```MySQL
     SELECT SUM(Product) FROM Customers;     
     ```
+
+    ### MIN()
+      To find the minimum value of a column. 
+    ```MySQL
+    SELECT MIN(Product) FROM Customers;     
+    ```
+
+    ### MAX()
+      To find the maximum value of a column. 
+    ```MySQL
+    SELECT MAX(Product) FROM Customers;     
+    ```
+
+    ### AVG()
+      To find the average value of a column. 
+    ```MySQL
+    SELECT AVG(Product) FROM Customers;     
+    ```
 ## ORDER BY
   To make arranged data, we can use `ORDER BY` keyword. We can arrange the data in ascending or descending.
   ```MySQL
@@ -378,5 +396,26 @@ refines the output from data that does not satisfy a certain condition.
     GROUP BY product
     HAVING COUNT(product) = 2;
   ```
+
+## Confict to use `WHERE` and `HAVING` condition
+  - We should use where normal data and look for every data inside of an if-else condition we can use `WHERE` clause.
+  - When we want the data where  we must have to use aggregate function then we need to use `HAVING` clause. But there is another clause we need to use which is `GROUP BY` cluse. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
