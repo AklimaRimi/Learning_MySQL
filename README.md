@@ -398,12 +398,41 @@ refines the output from data that does not satisfy a certain condition.
   ```
 
 ## Conflict to use `WHERE` and `HAVING` condition
-  - We should use where normal data and look for every data inside of an if-else condition we can use `WHERE` clause.
-  - When we want the data where  we must have to use aggregate function then we need to use `HAVING` clause. But there is another clause we need to use which is `GROUP BY` cluse. 
+  - We should use where normal data and look for every data inside of an if-else condition. We can use `WHERE` clause.
+  - When we want the data where we must use the aggregate function, then we need to use `HAVING` clause. But there is another clause we need to use which is `GROUP BY` clause.
 
+**Suppose, Let's find some Name that is applied 100 times before January, 2023, Hired in January**
+  Here is, not to be pointed out that 1. we need to count names, 2. find data that have information on January
 
+  So to solve the 1st problem we have to use the `HAVING` clause and for the 2nd problem need to use `WHERE` condition. The code will be: 
 
+  ```MySQL
+    SELECT Name COUNT(Name) AS cnt_name Month FROM Employee
+    GROUP BY Name
+    HAVING COUNT(Name) >= 100
+    WHERE Month = 'January, 2023';
+  ```
+Where first we grouped the data based on the `Name` column the Month `column` also affected. But I need data where no columns cannot be affected. It is a good practice to use `WHERE` clause first, Also If we use `WHERE` clause beginning of `GROUP BY` what will be the answer? First data will be filtered by January then `COUNT` Names. That is what we wanted.
 
+  ```MySQL
+    SELECT Name COUNT(Name) AS cnt_name Month FROM Employee
+    WHERE Month = 'January, 2023'
+    GROUP BY Name
+    HAVING COUNT(Name) >= 100;
+  ```
+
+## LIMIT
+Limit shows the limited rows of data
+
+```MySQL
+    SELECT Name COUNT(Name) AS cnt_name Month FROM Employee
+    WHERE Month = 'January, 2023'
+    GROUP BY Name
+    HAVING COUNT(Name) >= 100
+    ORDERED BY cnt_name
+    LIMIT 10;
+  ```
+The output will show 1st 10 rows which indicate the top 10 employee names who applied more than 100 times before January,2023.
 
 
 
