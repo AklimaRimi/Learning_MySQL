@@ -1,5 +1,8 @@
 # MySQL
 
+![](https://github.com/AklimaRimi/Learning_MySQL/assets/59701116/2e897ced-be5f-4270-856d-b1ce214c9457)
+
+
 Let's Nothing Talk about MySQL. We all know that it is used to store, manipulate, and delete huge amounts of data. Yeah, it's as simple as that.
 
 It has several terms, like
@@ -358,9 +361,22 @@ To rename any column name or any value name, we can use  `AS`.
     SELECT Product As P FROM Customers ;
     SELECT COUNT(Product) AS product_count FROM Customers; 
   ```
+## HAVING 
+refines the output from data that does not satisfy a certain condition.
+- Frequently implemented with `GROUP BY`
+- `HAVING` is like `WHERE` condition but applied to the `GROUP BY` block.
+- After `HAVING` condition we can use `aggregate function`. We cannot use the `aggregate function` inside of `WHERE` condition.
 
+  ```MySQL
+    SELECT * FROM Customers
+    WHERE COUNT(product) > 2;
+  ```
+  This will give us an error because `COUNT` function doesn't work inside of `WHERE` Condition instead we can write..
 
-
-
+  ```MySQL
+    SELECT * FROM Customers
+    GROUP BY product
+    HAVING COUNT(product) = 2;
+  ```
 
 
