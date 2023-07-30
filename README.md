@@ -397,7 +397,7 @@ refines the output from data that does not satisfy a certain condition.
     HAVING COUNT(product) = 2;
   ```
 
-## Confict to use `WHERE` and `HAVING` condition
+## Conflict to use `WHERE` and `HAVING` condition
   - We should use where normal data and look for every data inside of an if-else condition we can use `WHERE` clause.
   - When we want the data where  we must have to use aggregate function then we need to use `HAVING` clause. But there is another clause we need to use which is `GROUP BY` cluse. 
 
