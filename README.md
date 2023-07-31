@@ -565,9 +565,43 @@ Output:
 |2|B|Y|US|
 |3|C|Z|SL|
 
+# Nested Query, SubQuery, Inner Query
+
+  ```MySQL
+  SELECT * FROM TABLE WHERE condition;
+  ```
+Yeah, Subquery is the same as what we did previously.
+But
+ - it is written in the main `WHERE` condition
+ - must have to use () parenthesis
+ - the output of the subqueries could be a list or value or a table.
+
+  ```MySQL
+  SELECT *
+  FROM TABLE1
+  WHERE (
+    SELECT *
+    FROM TABLE2) ;
+  ```
+
+Question: Assign employee number 100 as a manager to all employees from  101 to 120 and employee number 129 as a manager to all employees from 131 to 140. 
 
 
+  ```MySQL
+  SELECT first.* FROM
+  (SELECT employe_NO, (SELECT emp_no FROM manager WHERE emp_no = 100) as Manager_id
+  From manager
+  WHERE employe_id BETWEEN 101 AND 120)  AS first
 
+  UNION
+
+  SELECT second* FROM
+  (SELECT employe_NO, (SELECT emp_no FROM manager WHERE emp_no = 129) as Manager_id
+  From manager
+  WHERE employe_id BETWEEN 131 AND 140)  AS second
+
+ORDER BY Manager_id;
+  ```
 
 
 
