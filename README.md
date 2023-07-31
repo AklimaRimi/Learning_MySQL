@@ -483,10 +483,50 @@ Output:
   |1|A|X|
   |2|B|NULL|
   |3|C|Y|
- 
+
+## RIGHT JOIN
+
+If you figured out how the `LEFT JOIN` works, I know you are smart enough to understand what `RIGHT JOIN` will do.
+
+ ## Multiple Table Join
+
+ In SQL, it follows a hierarchy to join multiple tables. 
+First, join 2 tables; it will generate a new table, and then the new table can be used to join another table.
+| ID| Name|
+  |---|-----|
+  |1|A|
+  |2|B|
+  |3|C|
+
+|ID| Work|
+|--|---|
+|1|X|
+|2|Z|
+|3|Y|
 
 
+|Name| Address|
+|--|---|
+|A|Ca|
+|B|US|
+|C|SL|
 
+
+  ```MySQL
+    SELECT table1.ID, table1.Name,table2.Work, table3.Address
+    FROM table1
+    JOIN table2
+    ON table1.ID = table2.ID
+    JOIN table3
+    ON table1.Name = table3.Name;
+  ```
+Output:
+
+|ID|Name|Work|Address|
+|--|----|----|-------|
+|1|A|X|Ca|
+|2|B|Y|US|
+|3|C|Z|SL|
 
 
 
