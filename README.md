@@ -440,15 +440,50 @@ Simply join multiple tables using a common column and make another new table by 
 Point to be noted that two columns must have a common column or `FOREIGN KEY` Column.
 
   ## INNER JOIN
-    - Only returns Common Columns or matching values between 2 tables.
+  - Only returns Common or matching values between 2 tables.
 
  ```MySQL
   SELECT table_1.column1, table_1.column2, table_1.column3, table_2.column1, table_2.column2, table_2.column3
 
  FROM table_1
- JOIN table_2 ON table_1.column1 = table_2.column1;
+ INNER JOIN table_2 ON table_1.column1 = table_2.column1;
  ```
 
+Note: `INNER JOIN` and `JOIN` are both the same.
+
+  ## LEFT JOIN
+  - When we are performing a join of 2 tables, the 1st table is the left table and the 2nd one is the right table.
+  - In the Left Join the 1st table's common column will be prioritized.
+  - Performing `LEFT JOIN` that will return all of the values of the common column of 1st table.
+  - If the Left Column value doesn't match with the right column value the row will fill with NULL value
+
+    | ID| Name|
+    |---|-----|
+    |1|A|
+    |2|B|
+    |3|C|
+
+Another Table is
+|ID| Work|
+|--|---|
+|1|X|
+|3|Y|
+
+And perform the `LEFT JOIN` 
+
+```MySQL
+SELECT table_1.ID, table_1.Name, table_2.Work
+FROM table_1
+LEFT JOIN table_2 on table_1.ID = table_2.ID;
+```
+Output:
+
+  | ID| Name|Work|
+  |---|-----|----|
+  |1|A|X|
+  |2|B|NULL|
+  |3|C|Y|
+ 
 
 
 
