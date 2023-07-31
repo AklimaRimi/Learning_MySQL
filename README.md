@@ -488,10 +488,47 @@ Output:
 
 If you figured out how the `LEFT JOIN` works, I know you are smart enough to understand what `RIGHT JOIN` will do.
 
+## UNION vs UNION ALL
+
+`UNION` and `UNION ALL` works almost identical. No matter if there creates a NULL value both tables are important.
+
+BUT BUT BUT.....
+
+The problem creates when the table or tables contains duplicate values
+
+    `UNION` keyword returns distinct columns.
+
+    `UNION ALL` returns whole tables with duplicate columns.
+
+  ## Let's talk about some weird join
+  1. `LEFT OUTER JOIN`  : LOL, this is same as `LEFT` join. This is just another name to make us uncomfortable
+  2. `RIGHT OUTER JOIN`: LOL again, you guessed it right.
+  3. `CROSS JOIN`: I don't know where this join is used for. 2 tables do cartesian product, or do some combination to join 2 tables
+     |Table 1|
+     |---|
+     |A|
+     |B|
+
+     |Table 2|
+     |--|
+     |C|
+     |D|
+
+     Output:
+     |row|row|
+     |--|--|
+     |A|C|
+     |B|C|
+     |A|D|
+     |B|D|
+4. `SELF JOIN`: Join 2 columns inside of a table based on another column.
+     
+
+
  ## Multiple Table Join
 
- In SQL, it follows a hierarchy to join multiple tables. 
-First, join 2 tables; it will generate a new table, and then the new table can be used to join another table.
+  Shut up, It's simple. Just join with a common column in  another table.
+  
 | ID| Name|
   |---|-----|
   |1|A|
