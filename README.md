@@ -603,6 +603,66 @@ Question: Assign employee number 100 as a manager to all employees from  101 to 
 ORDER BY Manager_id;
   ```
 
+## VIEWS
+
+Suppose, we have 10 tables, and whenever we work on something in SQL, we have to `JOIN` the 10 tables again and again. As we know, this needs a huge line of code to join them. SO what we are going to do write the long code again and again or do something to solve the issue? In that case, There is a keyword, we are going to use `VIWES`. It creates a virtual table and stores it in a database for further use.
+
+for example:
+
+  ```MySQL
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
