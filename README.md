@@ -640,7 +640,7 @@ For this code, the output will be, Create a new virtual table in views named `ne
 
   ```MySQL
     SELECT col_name from daatabase_name.virtual_table_name;
-            //SO we can write
+            -- SO we can write
     SELECT name, Work from db.new_table;
   ```
 
