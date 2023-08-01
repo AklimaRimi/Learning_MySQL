@@ -671,15 +671,39 @@ For this code, the output will be, Create a new virtual table in views named `ne
   ```
   Here `DELIMITER $$` indicates the `PROCEDURE` will end when there have `$$` symbols. And then call the function using `CALL` and then the procedure name.
   
-  When a Procedure is created the procedure save under the database procedure store. So we can call a procedure by
+  When a Procedure is created, the procedure saves under the database procedure store. So we can call a procedure by
   
   ```MySQL
   CALL db.procedure_name()
   ```
 
+**Parameterized Procedure**
 
+  Code
+  ```MySQL
+  DELIMITER $$
+  CREATE PROCEDURE procedure_name(IN variable datatype)
+  
+  BEGIN
+      Statements/ Query;
+  END $$ 
+  
+  CALL procedure_name(value)
 
+    ---------------------
+  DELIMITER $$
+  CREATE PROCEDURE procedure_name(IN salary FLOAT)
+  
+  BEGIN
+      SELECT * FROM employee
+      WHERE
+          Salary = salary;
+  END $$
 
+  DELIMITER ;
+  
+  CALL procedure_name(1000);
+  ```
 
 
 
