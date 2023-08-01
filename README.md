@@ -644,6 +644,39 @@ For this code, the output will be, Create a new virtual table in views named `ne
     SELECT name, Work from db.new_table;
   ```
 
+# Stored Routine
+
+  A SQL statement or a list of SQL statements/instructions  that can be stored in an SQL server. It helps a user use Database.
+  
+  Users use the SQL by 1. calling the statement, 2. referencing, or 3. Revoke the SQL server. 
+  
+  There are 2 types of routines:
+    1. stored procedure
+    2. Function
+  
+  
+## Stored Procedure
+  
+  Code
+  ```MySQL
+  DELIMITER $$
+  CREATE PROCEDURE procedure_name()
+  
+  BEGIN
+      Statements/ Query;
+  END $$
+  
+  
+  CALL procedure_name()
+  ```
+  Here `DELIMITER $$` indicates the `PROCEDURE` will end when there have `$$` symbols. And then call the function using `CALL` and then the procedure name.
+  
+  When a Procedure is created the procedure save under the database procedure store. So we can call a procedure by
+  
+  ```MySQL
+  CALL db.procedure_name()
+  ```
+
 
 
 
