@@ -1,6 +1,6 @@
 # MySQL
 
-![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FAklimaRimi%2FCSRankings_Computer_Science_Rankings_AI_Dept&label=Reads&countColor=%23263759)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FAklimaRimi%2FLearning_MySQL&label=Reads&countColor=%23263759)
 
 ![](https://github.com/AklimaRimi/Learning_MySQL/assets/59701116/2e897ced-be5f-4270-856d-b1ce214c9457)
 
