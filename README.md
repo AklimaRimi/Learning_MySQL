@@ -610,10 +610,33 @@ Suppose, we have 10 tables, and whenever we work on something in SQL, we have to
 for example:
 
   ```MySQL
+    SELECT table_1.ID, table_1.name, table_2.Work, table_3.Address
+    FROM table_1
+      JOIN table_2
+          ON table_1.ID = table_2.ID
+      JOIN table_3
+          ON table_1.Name = table_3.Name
   ```
 
+Instead of writing the code again and again, we can store the data virtually based on `BASE` table. We can do this as..
 
+  ```MySQL
+  CREATE OR REPLACE VIEW new_table AS 
+    SELECT table_1.ID, table_1.name, table_2.Work, table_3.Address
+    FROM table_1
+      JOIN table_2
+          ON table_1.ID = table_2.ID
+      JOIN table_3
+          ON table_1.Name = table_3.Name;
+  ```
 
+For this code, the output will be, Create a new virtual table in views named `new_name` and store the 3 joined tables. So, that's going to be easy to perform any query. Such as
+
+  ```MySQL
+    SELECT col_name from daatabase_name.virtual_table_name;
+            //SO we can write
+    SELECT name, Work from db.new_table;
+  ```
 
 
 
