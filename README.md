@@ -670,6 +670,7 @@ For this code, the output will be, Create a new virtual table in views named `ne
   CALL procedure_name()
   ```
   Here `DELIMITER $$` indicates the `PROCEDURE` will end when there have `$$` symbols. And then call the function using `CALL` and then the procedure name.
+saved
   
   When a Procedure is created, the procedure saves under the database procedure store. So we can call a procedure by
   
@@ -677,7 +678,7 @@ For this code, the output will be, Create a new virtual table in views named `ne
   CALL db.procedure_name()
   ```
 
-**Parameterized Procedure**
+**Input Parameterized Procedure**
 
   Code
   ```MySQL
@@ -692,7 +693,7 @@ For this code, the output will be, Create a new virtual table in views named `ne
 
     ---------------------
   DELIMITER $$
-  CREATE PROCEDURE procedure_name(IN salary FLOAT)
+  CREATE PROCEDURE procedure_name (in salary FLOAT)
   
   BEGIN
       SELECT * FROM employee
@@ -706,15 +707,70 @@ For this code, the output will be, Create a new virtual table in views named `ne
   ```
 
 
+  ## Input and return parameters in Procedure
+  
+  ```MySQL
+    DELIMITER $$
+    CREATE PROCEDURE procedure_name(in salary FLOAT, out avg DECIMAL(10,2))
+    
+    BEGIN
+        SELECT AVG(e.Salary)
+        INTO avg
+        FROM employee AS e
+        WHERE
+            Salary = salary;
+    END $$
+  
+    DELIMITER ;
+
+    SET @avg =0 ;
+    CALL procedure_name(1000,@avg);
+    SELECT @avg;
+  ```
+
+**NOTE:** Here we can see a new term called `SET`. `SET` is used to set a value inside of `@avg` variable. Another important thing is when we declare a variable to set a value we need to start the variable name with `@`. 
+
+
+## Function
+  writing function code is almost similar to writing..
+  
+  Code
+  ```MySQL
+    DELIMITER $$
+    CREATE FUNCTION function_name(variable datatype) return datatype
+    
+    BEGIN
+        DECLARE output_value datatype;
+        SELECT
+            columns name
+        INTO
+            output_value
+        FROM
+            Statements/ Query;
+    END $$ 
+    DELIMITER ;
+    SELECT procedure_name(value);
+  ```
+
+## Difference between `PROCEDURE` and `FUNCTION`
+
+|PROCEDURE|FUNCTION|
+|---------|--------|
+|There is no return type for a procedure. But utilizing the OUT arguments, it returns values. | The value that a function returns is of a certain kind. |
+|Procedures support DML queries like insert, update, select, etc. |Using Data Manipulation queries, a function cannot be used. Functions may only use Select queries.|
+|A process accepts input and output variables. |Output parameters are not permitted by a function.|
+|Throughout a procedure, transactions can be managed. |Transaction management is not possible within a function.|
+|A function can be called from a stored process. |From a function, you cannot call stored procedures.|
+|Using choose statements to invoke a process is not possible.|You can use a choose statement to invoke a function.|
+|find output by calling `CALL` procedure| use `SELECT` function|
+|Can Multiple `OUT` parameters | can return a single value only |
+| slow compare to `FUNCTION`| Faster than `PROCEDURE`|
 
 
 
 
 
-
-
-
-
+# ============================ THE END =================================
 
 
 
