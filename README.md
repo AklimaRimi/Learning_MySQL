@@ -605,7 +605,13 @@ ORDER BY Manager_id;
 
 ## VIEWS
 
-Suppose, we have 10 tables, and whenever we work on something in SQL, we have to `JOIN` the 10 tables again and again. As we know, this needs a huge line of code to join them. SO what we are going to do write the long code again and again or do something to solve the issue? In that case, There is a keyword, we are going to use `VIWES`. It creates a virtual table and stores it in a database for further use.
+Suppose, we have 10 tables, and whenever we work on something in SQL, we have to `JOIN` the 10 tables again and again. As we know, this needs a huge line of code to join them. So what we are going to do write the long code again and again or do something to solve the issue? In that case, There is a keyword, we are going to use `VIWES`. It creates a virtual table and stores it in a database for further use.
+
+Why we are going to use `VIEWS`:
+  - Saves time
+  - Stops redundancy
+  - easy to use
+  - Memory efficient
 
 for example:
 
