@@ -2,8 +2,6 @@
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FAklimaRimi%2FLearning_MySQL&label=Reads&countColor=%23263759)
 
-![](https://github.com/AklimaRimi/Learning_MySQL/assets/59701116/2e897ced-be5f-4270-856d-b1ce214c9457)
-
 
 Let's Nothing Talk about MySQL. We all know that it is used to store, manipulate, and delete huge amounts of data. Yeah, it's as simple as that.
 
